@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WDP2022A2Win.Models.Company>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-light">Welcome To Top AI Companies</h1>
+    <p class="text-light text-center">This AI technology enables computers and systems to derive meaningful information from digital images, videos and other visual inputs, and based on those inputs, it can take action. This ability to provide recommendations distinguishes it from image recognition tasks.</p>
+</div>
+<div class="AI_heading">
+    <p><b>Artificial Intelligence</b></p>
+</div>
+<div class="row ai_company_block m-4 mb-0">
+    @foreach (var item in Model)
+            {
+    var image = "/images/" + item.ImageFilename;
+<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 p-2">
+   
+        <div class="company_block">
+            <figure>
+                <img class="company_image" src="@image"/>
+                <figcaption>
+            @Html.DisplayFor(modelitem => item.CompanyName)
+            </figcaption>
+            </figure>
+        </div>
+        </div>
+    }
+    </div>
+

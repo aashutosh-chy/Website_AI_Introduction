@@ -1,0 +1,165 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-image:url('../images/bg2.jpg')
+}
+
+.AI_heading {
+    font-family: 'Anton',sans-serif;
+    background-image: linear-gradient(to right, brown, brown, yellow, white, yellow, brown, brown);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: brown;
+    padding: 15% 5% 0% 5%;
+    text-align: center;
+    font-size: 6em;
+}
+.ai_company_block
+{
+    width:auto;
+    height:auto;
+}
+.company_block {
+    text-shadow: 2px 2px 0px white, 2px 2px 3px navy;
+    background: linear-gradient(to right, gray, white, gray);
+    color: navy;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    transition: 2s ease;
+    height: 170px;
+}
+
+    .company_block figure {
+        text-align: center;
+        height: 100%;
+        width: 100% !important;
+    }
+
+figcaption {
+    text-align: center;
+    font-size: 1.5rem !important;
+    position: absolute;
+}
+
+.company_image {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.company_block:hover .company_image {
+    display: block;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    figure {
+        height: 250px;
+        width: 250px;
+    }
+
+    figcaption {
+        font-size: 3em;
+    }
+
+    .home_heading {
+        font-size: 5em;
+    }
+
+    .home_mission_text {
+        font-size: 1.35em;
+    }
+
+    .top_six .home_heading {
+        font-size: 2em;
+    }
+
+@media (min-width: 768px) and (max-width: 992px) {
+        figure {
+            height: 200px;
+            width: 200px;
+        }
+
+        figcaption {
+            font-size: 2em;
+        }
+
+        .home_heading {
+            font-size: 4em;
+        }
+
+        .home_mission_text {
+            font-size: 1.15em;
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 768px) {
+        figure {
+            height: 200px;
+            width: 200px;
+        }
+
+        .home_heading {
+            font-size: 3em;
+        }
+
+        .home_mission_text {
+            font-size: 1em;
+        }
+    }
+
+    @media (max-width: 576px) {
+        figure {
+            height: 200px;
+            width: 200px;
+        }
+
+        .home_heading {
+            font-size: 2em;
+        }
+
+        .home_mission_text {
+            font-size: 0.9em;
+        }
+    }
+}
+.ai_fig {
+    margin: 0;
+    height: 100%;
+}
+.ai_company_image {
+    width: 100% !important;
+    height: 100%;
+    padding-bottom:20px;
+}
+.ai_caption {
+    display: none;
+}
+.ai_heading {
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 2px 2px 0px white, 2px 2px 4px navy;
+    font-family: 'Oxygen' sans-serif;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+
+}
+.ai_text_block {
+    padding: 3%;
+    text-align: justify;
+}

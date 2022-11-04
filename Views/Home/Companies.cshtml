@@ -1,0 +1,78 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@model IEnumerable<Company>
+
+@{
+    ViewData["Title"] = "TOP AI COMPANIES";
+}
+<div class="AI_heading">
+    <p><b>Artificial Intelligence</b></p>
+</div>
+@if (SignInManager.IsSignedIn(User))
+{
+        <div class="row text-light">
+      
+    @foreach (var item in Model)
+        {
+            var image = "/images/" + item.ImageFilename;
+        <div class="col-md-6 col-sm-12 p-0">
+            <figure class="ai_fig">
+                <img class="ai_company_image" src="@image" />
+                </figure>
+                </div>
+
+        <div class="col-md-6 col-sm-12 ai_text_block ai_text_block_orange">
+            <div class="ai_heading">
+                <p>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </p>
+                </div>
+                <p class="ai_text">
+                @Html.DisplayFor(modelItem => item.Summary)
+            </p>
+          <form method="post">
+                    
+              <input type="hidden" name="Id" asp-for="@item.Id" />
+              <input type="hidden" name="CompanyName" asp-for="@item.CompanyName" />
+              <input type="hidden" name="Summary" asp-for="@item.Summary" />
+              <input type="hidden" name="ImageFilename" asp-for="@item.ImageFilename" />
+              <input type="hidden" name="AnchorLink" asp-for="@item.AnchorLink" />
+              <input type="hidden" name="Like" asp-for="@item.Like" />
+              <input type="hidden" name="canIncreaseLike" asp-for="@item.canIncreaseLike" />
+
+          <input type="submit" class="btn btn-primary" value="Vote(@item.Like)" onclick="location.href='@Url.Action("Companies", "Home", new { Id = item.Id} ,null)'" />
+          @*<div class="btn btn-primary"><p>Vote</p>@Html.DisplayFor(modelItem => item.Like)</div>*@
+          </form>
+          </div>
+        }
+
+
+        </div>
+  }
+else
+{
+        <div class="row text-light">
+    
+            @foreach (var item in Model)
+            {
+                var image = "/images/" + item.ImageFilename;
+                <div class="col-md-6 col-sm-12 p-0">
+                    <figure class="ai_fig">
+                        <img class="ai_company_image" src="@image" />
+                    </figure>
+                </div>
+                <div class="col-md-6 col-sm-12 ai_text_block ai_text_block_orange">
+                    <div class="ai_heading">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.CompanyName)
+                        </p>
+                    </div>
+                    <p class="ai_text">
+                        @Html.DisplayFor(modelItem => item.Summary)
+                    </p>
+                </div>
+            }
+
+    </div>
+
+}
